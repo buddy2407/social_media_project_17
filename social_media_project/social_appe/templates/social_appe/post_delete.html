@@ -1,0 +1,23 @@
+{% extends 'landing/base.html' %}
+
+{% block content %}
+    <div class="container">
+    <div class="row  mt-3">
+        <div class="col-md-5 col-sm-12 ">
+            <a href="{% url 'post_details' object.pk %}" class="btn btn-success">Back to Post</a>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+        <div class="col-md-5 col-sm-12 ">
+           <form method="post">
+               {% csrf_token %}
+                <h6>Are You Sure ?</h6>
+               <p>Your are About this post this connot be undone </p>
+            <div class="d-grid gap-2">
+                <button class="btn btn-danger mt-3">Delete</button>
+            </div>
+           </form>
+        </div>
+    </div>
+    </div>
+{% endblock content %}
